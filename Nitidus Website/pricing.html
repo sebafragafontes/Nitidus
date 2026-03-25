@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing – Nitidus Web Design Switzerland</title>
+  <meta name="description" content="Simple, transparent pricing for Swiss small businesses. One-time website creation fee and an optional monthly care plan. No hidden costs, ever.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* =============================
+       RESET & BASE
+    ============================= */
+    *, *::before, *::after { box-sizing: border-box; }
+    * { margin: 0; }
+    body { line-height: 1.6; -webkit-font-smoothing: antialiased; background: var(--sand); }
+    img, picture, video, canvas, svg { display: block; max-width: 100%; }
+    input, button, textarea, select { font: inherit; }
+    p, h1, h2, h3, h4, h5, h6 { overflow-wrap: break-word; }
+    a { color: inherit; }
+    ul { list-style: none; padding: 0; }
+
+    /* =============================
+       DESIGN TOKENS
+    ============================= */
+    :root {
+      --sand:            #F5EFE6;
+      --sand-mid:        #EDE3D6;
+      --sand-dark:       #D8CBBA;
+      --terracotta:      #C1714B;
+      --terracotta-dark: #A85A38;
+      --forest:          #3D5A47;
+      --forest-light:    #527460;
+      --text:            #2C2117;
+      --text-muted:      #6B5B4E;
+      --white:           #FFFDF9;
+      --border:          #DDD4C8;
+
+      --font-display: 'Lora', Georgia, serif;
+      --font-body:    'DM Sans', system-ui, sans-serif;
+
+      --radius-sm:  6px;
+      --radius-md:  12px;
+      --radius-lg:  20px;
+      --radius-xl:  32px;
+
+      --shadow-sm:  0 2px 8px rgba(44, 33, 23, 0.07);
+      --shadow-md:  0 6px 20px rgba(44, 33, 23, 0.11);
+      --shadow-lg:  0 16px 48px rgba(44, 33, 23, 0.14);
+
+      --ease: cubic-bezier(0.4, 0, 0.2, 1);
+      --container-max: 1100px;
+      --container-pad: clamp(1.25rem, 5vw, 2.5rem);
+    }
+
+    /* =============================
+       UTILITIES
+    ============================= */
+    .container {
+      width: 100%;
+      max-width: var(--container-max);
+      margin-inline: auto;
+      padding-inline: var(--container-pad);
+    }
+
+    .section { padding-block: clamp(4rem, 10vw, 7rem); }
+
+    .section-label {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.9rem, 4vw, 3rem);
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.2;
+      margin-bottom: 1.25rem;
+    }
+
+    .section-sub {
+      font-family: var(--font-body);
+      font-size: clamp(1rem, 1.5vw, 1.15rem);
+      color: var(--text-muted);
+      line-height: 1.75;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.8rem 1.75rem;
+      border-radius: var(--radius-xl);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      transition: all 220ms var(--ease);
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--terracotta);
+      color: var(--white);
+    }
+    .btn-primary:hover {
+      background: var(--terracotta-dark);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn-outline-forest {
+      background: transparent;
+      border: 2px solid var(--forest);
+      color: var(--forest);
+    }
+    .btn-outline-forest:hover {
+      background: var(--forest);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    .btn-ghost {
+      background: rgba(255,255,255,0.18);
+      color: var(--white);
+      border: 1.5px solid rgba(255,255,255,0.4);
+    }
+    .btn-ghost:hover {
+      background: rgba(255,255,255,0.28);
+      transform: translateY(-2px);
+    }
+
+    /* =============================
+       HEADER / NAV
+    ============================= */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      background: rgba(245, 239, 230, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      transition: box-shadow 250ms var(--ease);
+    }
+    .site-header.scrolled { box-shadow: var(--shadow-sm); }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      height: 68px;
+    }
+
+    .logo {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    }
+    .logo span { color: var(--terracotta); }
+
+    .nav-list { display: flex; gap: 0.25rem; }
+
+    .nav-link {
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-decoration: none;
+      padding: 0.4rem 0.85rem;
+      border-radius: var(--radius-xl);
+      transition: color 180ms, background 180ms;
+    }
+    .nav-link:hover, .nav-link.active {
+      color: var(--text);
+      background: var(--sand-mid);
+    }
+    .nav-link.active { color: var(--terracotta); font-weight: 600; }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.4rem;
+      color: var(--text);
+      font-size: 1.5rem;
+      line-height: 1;
+    }
+
+    @media (max-width: 700px) {
+      .nav-toggle { display: flex; }
+      .nav-list {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0; right: 0;
+        flex-direction: column;
+        gap: 0;
+        background: var(--sand);
+        border-bottom: 1px solid var(--border);
+        padding: 0.75rem var(--container-pad) 1.25rem;
+        box-shadow: var(--shadow-md);
+      }
+      .nav-list.open { display: flex; }
+      .nav-cta { display: none; }
+    }
+
+    /* =============================
+       PAGE HERO
+    ============================= */
+    .page-hero {
+      background: var(--forest);
+      padding-block: clamp(4rem, 10vw, 6.5rem);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 80% at 20% 50%, rgba(193,113,75,0.18) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 60% at 80% 20%, rgba(82,116,96,0.4) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .page-hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 620px;
+      margin-inline: auto;
+    }
+
+    .page-hero-label {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 1rem;
+    }
+
+    .page-hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 1.25rem;
+    }
+
+    .page-hero-title em {
+      font-style: italic;
+      color: #E8A882;
+    }
+
+    .page-hero-sub {
+      font-family: var(--font-body);
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.8;
+    }
+
+    /* =============================
+       PRICING MODEL EXPLANATION
+    ============================= */
+    .model-section { background: var(--white); }
+
+    .model-inner {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    @media (min-width: 800px) {
+      .model-inner { grid-template-columns: 1fr 1fr; }
+    }
+
+    .model-text .section-sub { max-width: 100%; }
+
+    .model-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      margin-top: 1.75rem;
+    }
+
+    .model-step {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .model-step-num {
+      flex-shrink: 0;
+      width: 2.25rem;
+      height: 2.25rem;
+      border-radius: 50%;
+      background: var(--terracotta);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .model-step-title {
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.2rem;
+    }
+
+    .model-step-desc {
+      font-family: var(--font-body);
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* Visual */
+    .model-visual {
+      background: var(--forest);
+      border-radius: var(--radius-xl);
+      padding: 2.25rem;
+      color: var(--white);
+    }
+
+    .model-visual-title {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+    }
+
+    .model-flow {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .flow-item {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      padding-bottom: 1.25rem;
+      position: relative;
+    }
+
+    .flow-item:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      left: 1.1rem;
+      top: 2.25rem;
+      bottom: 0;
+      width: 1.5px;
+      background: rgba(255,255,255,0.15);
+    }
+
+    .flow-dot {
+      flex-shrink: 0;
+      width: 2.25rem;
+      height: 2.25rem;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.12);
+      border: 1.5px solid rgba(255,255,255,0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+    }
+
+    .flow-dot.orange { background: var(--terracotta); border-color: var(--terracotta); }
+
+    .flow-label {
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 0.2rem;
+    }
+
+    .flow-sub {
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.55);
+    }
+
+    /* =============================
+       PRICING CARDS
+    ============================= */
+    .pricing-section { background: var(--sand); }
+
+    .pricing-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .pricing-header .section-sub { max-width: 520px; margin-inline: auto; }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      max-width: 860px;
+      margin-inline: auto;
+    }
+
+    .price-card {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-xl);
+      padding: 2.5rem 2.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      position: relative;
+    }
+
+    .price-card-featured {
+      border-color: var(--forest);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .price-badge {
+      position: absolute;
+      top: -1px;
+      right: 2rem;
+      background: var(--forest);
+      color: var(--white);
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.3rem 1rem;
+      border-radius: 0 0 var(--radius-md) var(--radius-md);
+    }
+
+    .price-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+
+    .price-name {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.6rem;
+    }
+
+    .price-tagline {
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+
+    .price-amount-block {
+      padding-block: 1.5rem;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 1.75rem;
+    }
+
+    .price-amount {
+      font-family: var(--font-display);
+      font-size: 2.75rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1;
+    }
+
+    .price-amount sup {
+      font-size: 1.2rem;
+      font-weight: 600;
+      vertical-align: super;
+      margin-right: 0.1rem;
+    }
+
+    .price-freq {
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 0.4rem;
+    }
+
+    .price-note {
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-style: italic;
+      margin-top: 0.3rem;
+    }
+
+    .price-features {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      margin-bottom: 2rem;
+      flex: 1;
+    }
+
+    .price-feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.65rem;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .pf-check {
+      flex-shrink: 0;
+      width: 1.25rem;
+      height: 1.25rem;
+      border-radius: 50%;
+      background: color-mix(in srgb, var(--forest) 12%, transparent);
+      color: var(--forest);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 700;
+      margin-top: 0.1rem;
+    }
+
+    /* =============================
+       WHAT'S INCLUDED TABLE
+    ============================= */
+    .included-section { background: var(--white); }
+
+    .included-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .included-header .section-sub { max-width: 500px; margin-inline: auto; }
+
+    .included-table-wrap {
+      overflow-x: auto;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+    }
+
+    .included-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: var(--font-body);
+    }
+
+    .included-table th {
+      background: var(--sand);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      padding: 1rem 1.5rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .included-table th:not(:first-child) { text-align: center; }
+
+    .included-table td {
+      padding: 0.95rem 1.5rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      border-bottom: 1px solid rgba(221, 212, 200, 0.5);
+    }
+
+    .included-table td:not(:first-child) { text-align: center; }
+
+    .included-table tr:last-child td { border-bottom: none; }
+
+    .included-table .feature-name {
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    .check-yes { color: var(--forest); font-size: 1.1rem; }
+    .check-no  { color: var(--sand-dark); font-size: 1.1rem; }
+
+    /* =============================
+       FAQ
+    ============================= */
+    .faq-section { background: var(--sand); }
+
+    .faq-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .faq-list {
+      max-width: 700px;
+      margin-inline: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background: var(--white);
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+    }
+    .faq-item:last-child { border-bottom: none; }
+
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1.25rem 1.5rem;
+      font-family: var(--font-body);
+      font-size: 0.97rem;
+      font-weight: 600;
+      color: var(--text);
+      text-align: left;
+      transition: background 180ms;
+    }
+
+    .faq-question:hover { background: var(--sand); }
+
+    .faq-icon {
+      flex-shrink: 0;
+      width: 1.6rem;
+      height: 1.6rem;
+      border-radius: 50%;
+      background: var(--sand-mid);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      color: var(--terracotta);
+      transition: transform 250ms var(--ease), background 250ms;
+    }
+
+    .faq-item.open .faq-icon {
+      transform: rotate(45deg);
+      background: var(--terracotta);
+      color: var(--white);
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 0 1.5rem 1.25rem;
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+    }
+
+    .faq-item.open .faq-answer { display: block; }
+
+    /* =============================
+       BOTTOM CTA
+    ============================= */
+    .bottom-cta { background: var(--forest); text-align: center; padding-block: clamp(4rem, 10vw, 6rem); }
+
+    .bottom-cta-inner { max-width: 560px; margin-inline: auto; }
+
+    .bottom-cta-label {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #E8A882;
+      margin-bottom: 1rem;
+    }
+
+    .bottom-cta-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.2;
+      margin-bottom: 1.25rem;
+    }
+
+    .bottom-cta-sub {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.8;
+      margin-bottom: 2.25rem;
+    }
+
+    .bottom-cta-btns {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* =============================
+       FOOTER
+    ============================= */
+    .site-footer {
+      background: var(--text);
+      color: rgba(255,255,255,0.55);
+      padding-block: 2.5rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+    }
+
+    .footer-logo {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--white);
+      text-decoration: none;
+    }
+    .footer-logo span { color: #E8A882; }
+
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .footer-links a {
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      transition: color 180ms;
+    }
+    .footer-links a:hover { color: var(--white); }
+
+    .footer-copy {
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      width: 100%;
+      text-align: center;
+      margin-top: 1.25rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    /* =============================
+       ANIMATIONS
+    ============================= */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: none; }
+    }
+    .reveal { animation: fadeUp 600ms cubic-bezier(0.4, 0, 0.2, 1) both; }
+    .reveal-delay-1 { animation-delay: 80ms; }
+    .reveal-delay-2 { animation-delay: 160ms; }
+    .reveal-delay-3 { animation-delay: 240ms; }
+  </style>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header" id="site-header">
+    <nav class="container nav-inner" aria-label="Main navigation">
+      <a href="index.html" class="logo">Nitid<span>us</span></a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle menu">☰</button>
+
+            <ul class="nav-list" id="nav-menu" role="list">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="pricing.html" class="nav-link active">Pricing</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+
+      <a href="contact.html" class="btn btn-primary nav-cta" style="padding: 0.6rem 1.35rem; font-size: 0.88rem;">
+        Let's talk →
+      </a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ===== PAGE HERO ===== -->
+    <section class="page-hero">
+      <div class="page-hero-inner">
+        <p class="page-hero-label">Pricing</p>
+        <h1 class="page-hero-title">Simple, honest pricing. <em>No surprises.</em></h1>
+        <p class="page-hero-sub">We believe every Swiss business owner should know exactly what they are paying for before they commit to anything. So here is everything, laid out clearly.</p>
+      </div>
+    </section>
+
+    <!-- ===== HOW OUR MODEL WORKS ===== -->
+    <section class="section model-section" aria-labelledby="model-title">
+      <div class="container model-inner">
+
+        <div class="model-text">
+          <p class="section-label">How it works</p>
+          <h2 class="section-title" id="model-title">Pay once. Then a little each month.</h2>
+          <p class="section-sub">Building a website is a one-time project. Keeping it healthy, up to date and working perfectly is an ongoing job. We have split these into two separate things so you only pay for what you actually need.</p>
+
+          <div class="model-steps">
+            <div class="model-step">
+              <div class="model-step-num">1</div>
+              <div>
+                <p class="model-step-title">You pay once for the website</p>
+                <p class="model-step-desc">We design, build and launch your site. Once it is live, you own it completely. The creation fee covers everything from the first conversation to the moment your site goes public.</p>
+              </div>
+            </div>
+            <div class="model-step">
+              <div class="model-step-num">2</div>
+              <div>
+                <p class="model-step-title">Then optionally, a monthly care plan</p>
+                <p class="model-step-desc">For a small fixed amount each month, we take care of everything your website needs to keep running properly. Changes, updates, little fixes — you just send us a message and it gets done. Think of it as having a web person on call, without the full-time cost.</p>
+              </div>
+            </div>
+            <div class="model-step">
+              <div class="model-step-num">3</div>
+              <div>
+                <p class="model-step-title">No hidden fees, ever</p>
+                <p class="model-step-desc">What you see on this page is what you pay. There are no setup charges, no platform fees and no surprises on your invoice.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="model-visual">
+            <p class="model-visual-title">Your journey with Nitidus</p>
+            <div class="model-flow">
+              <div class="flow-item">
+                <div class="flow-dot orange">☕</div>
+                <div>
+                  <p class="flow-label">Discovery call</p>
+                  <p class="flow-sub">We learn about your business</p>
+                </div>
+              </div>
+              <div class="flow-item">
+                <div class="flow-dot orange">🎨</div>
+                <div>
+                  <p class="flow-label">Design and build</p>
+                  <p class="flow-sub">We create your website</p>
+                </div>
+              </div>
+              <div class="flow-item">
+                <div class="flow-dot orange">🚀</div>
+                <div>
+                  <p class="flow-label">Launch</p>
+                  <p class="flow-sub">One-time payment, site is yours</p>
+                </div>
+              </div>
+              <div class="flow-item">
+                <div class="flow-dot">🔧</div>
+                <div>
+                  <p class="flow-label">Monthly care (optional)</p>
+                  <p class="flow-sub">Updates, security and support</p>
+                </div>
+              </div>
+              <div class="flow-item">
+                <div class="flow-dot">📈</div>
+                <div>
+                  <p class="flow-label">Your business grows</p>
+                  <p class="flow-sub">We are here whenever you need us</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== PRICING CARDS ===== -->
+    <section class="section pricing-section" aria-labelledby="pricing-title">
+      <div class="container">
+        <div class="pricing-header reveal">
+          <p class="section-label">Our plans</p>
+          <h2 class="section-title" id="pricing-title">Clear prices, nothing hidden</h2>
+          <p class="section-sub">Two straightforward options. You can take both, or just the website creation to start. The choice is always yours.</p>
+        </div>
+
+        <div class="pricing-grid">
+
+          <!-- CARD 1: Creation -->
+          <div class="price-card reveal reveal-delay-1">
+            <div class="price-icon">🏗️</div>
+            <h3 class="price-name">Website Creation</h3>
+            <p class="price-tagline">Everything you need to go from an idea to a live, professional website. Built once, owned by you forever.</p>
+
+            <div class="price-amount-block">
+              <div class="price-amount">
+                <!-- TODO: Set your price -->
+                <sup>CHF</sup> ___
+              </div>
+              <p class="price-freq">one-time payment</p>
+              <p class="price-note">Price may vary for larger or more complex projects. We will always quote upfront.</p>
+            </div>
+
+            <ul class="price-features">
+              <li class="price-feature"><span class="pf-check">✓</span> Custom design tailored to your brand</li>
+              <li class="price-feature"><span class="pf-check">✓</span> Fully mobile responsive</li>
+              <li class="price-feature"><span class="pf-check">✓</span> SEO foundations included</li>
+              <li class="price-feature"><span class="pf-check">✓</span> Contact form setup</li>
+              <li class="price-feature"><span class="pf-check">✓</span> Up to 5 pages</li>
+              <li class="price-feature"><span class="pf-check">✓</span> Launch and domain connection</li>
+              <li class="price-feature"><span class="pf-check">✓</span> You own 100% of the code</li>
+              <li class="price-feature"><span class="pf-check">✓</span> 2 rounds of revisions</li>
+            </ul>
+
+            <a href="index.html#contact" class="btn btn-outline-forest" style="text-align:center; justify-content:center;">Start a project →</a>
+          </div>
+
+          <!-- CARD 2: Monthly Care -->
+          <div class="price-card price-card-featured reveal reveal-delay-2">
+            <div class="price-badge">Peace of mind</div>
+            <div class="price-icon">🤲</div>
+            <h3 class="price-name">Monthly Care</h3>
+            <p class="price-tagline">Your website keeps working, looking good and representing your business properly every single month. You never have to think about it.</p>
+
+            <div class="price-amount-block">
+              <div class="price-amount">
+                <!-- TODO: Set your price -->
+                <sup>CHF</sup> ___
+              </div>
+              <p class="price-freq">per month, cancel anytime</p>
+              <p class="price-note">Requires the Website Creation plan first. Billed monthly with no annual commitment required.</p>
+            </div>
+
+            <ul class="price-features">
+              <li class="price-feature"><span class="pf-check">✓</span> We handle everything your site needs</li>
+              <li class="price-feature"><span class="pf-check">✓</span> Changes and updates whenever you need them</li>
+              <li class="price-feature"><span class="pf-check">✓</span> Always someone to reach out to</li>
+              <li class="price-feature"><span class="pf-check">✓</span> No technical knowledge needed on your side</li>
+              <li class="price-feature"><span class="pf-check">✓</span> Peace of mind, month after month</li>
+              <li class="price-feature"><span class="pf-check">✓</span> Cancel any time, no questions asked</li>
+            </ul>
+
+            <a href="index.html#contact" class="btn btn-primary" style="text-align:center; justify-content:center;">Get started →</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== COMPARISON TABLE ===== -->
+    <section class="section included-section" aria-labelledby="included-title">
+      <div class="container">
+        <div class="included-header reveal">
+          <p class="section-label">What you get</p>
+          <h2 class="section-title" id="included-title">Everything at a glance</h2>
+          <p class="section-sub">A clear breakdown of what is included in each plan, so you can make the right decision for your business.</p>
+        </div>
+
+        <div class="included-table-wrap reveal">
+          <table class="included-table" aria-label="Feature comparison">
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th>Website Creation</th>
+                <th>Monthly Care</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="feature-name">Custom website design</td>
+                <td><span class="check-yes">✓</span></td>
+                <td><span class="check-no">—</span></td>
+              </tr>
+              <tr>
+                <td class="feature-name">Mobile responsive layout</td>
+                <td><span class="check-yes">✓</span></td>
+                <td><span class="check-no">—</span></td>
+              </tr>
+              <tr>
+                <td class="feature-name">SEO foundations</td>
+                <td><span class="check-yes">✓</span></td>
+                <td><span class="check-no">—</span></td>
+              </tr>
+              <tr>
+                <td class="feature-name">Contact form</td>
+                <td><span class="check-yes">✓</span></td>
+                <td><span class="check-no">—</span></td>
+              </tr>
+              <tr>
+                <td class="feature-name">Launch and domain setup</td>
+                <td><span class="check-yes">✓</span></td>
+                <td><span class="check-no">—</span></td>
+              </tr>
+              <tr>
+                <td class="feature-name">You own the code</td>
+                <td><span class="check-yes">✓</span></td>
+                <td><span class="check-yes">✓</span></td>
+              </tr>
+              <tr>
+                <td class="feature-name">Monthly content updates</td>
+                <td><span class="check-no">—</span></td>
+                <td><span class="check-yes">✓</span></td>
+              </tr>
+              <tr>
+                <td class="feature-name">Everything handled for you</td>
+                <td><span class="check-no">—</span></td>
+                <td><span class="check-yes">✓</span></td>
+              </tr>
+              <tr>
+                <td class="feature-name">Always someone to reach out to</td>
+                <td><span class="check-no">—</span></td>
+                <td><span class="check-yes">✓</span></td>
+              </tr>
+              <tr>
+                <td class="feature-name">No technical knowledge needed</td>
+                <td><span class="check-no">—</span></td>
+                <td><span class="check-yes">✓</span></td>
+              </tr>
+              <tr>
+                <td class="feature-name">Cancel any time</td>
+                <td><span class="check-no">—</span></td>
+                <td><span class="check-yes">✓</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="section faq-section" aria-labelledby="faq-title">
+      <div class="container">
+        <div class="faq-header reveal">
+          <p class="section-label">Common questions</p>
+          <h2 class="section-title" id="faq-title">Things people usually ask us</h2>
+        </div>
+
+        <div class="faq-list reveal" role="list">
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false">
+              Do I have to take the monthly plan after my website is built?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              Not at all. The Monthly Care plan is completely optional. Once your site is launched, it is yours. If you prefer to manage it yourself, that is totally fine. Many clients start without the monthly plan and add it later when they realise how much time it saves them.
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false">
+              Can I cancel the monthly plan at any time?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              Yes. There is no contract and no minimum commitment. You can cancel any time before your next billing date and you will not be charged again. Your website stays yours regardless.
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false">
+              What does "we handle everything" actually mean?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              It means that if something on your website needs to change or stops working, you send us a message and we sort it out. New opening hours, a price change, a new photo, a paragraph rewrite — you do not need to know anything technical. You just tell us what you want and we take care of it.
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false">
+              Does the creation price change for bigger websites?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              The standard price covers sites of up to 5 pages. If your business needs something more complex, like a larger site, a shop or special functionality, we will discuss it with you first and give you a clear quote before any work begins. There are never any surprises.
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false">
+              What if I already have a website and just want the monthly care?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              We are happy to take a look at your existing site. If it is something we can maintain without a full rebuild, we will tell you honestly and we can discuss whether the monthly plan makes sense for your situation.
+            </div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-question" aria-expanded="false">
+              Who takes care of hosting and domain?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              We help you set up hosting and connect your domain as part of the creation process. Hosting costs are typically very low for a simple business website and are paid directly to the hosting provider. We will walk you through everything so nothing feels confusing.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== BOTTOM CTA ===== -->
+    <section class="bottom-cta" aria-label="Call to action">
+      <div class="bottom-cta-inner">
+        <p class="bottom-cta-label">Ready to begin?</p>
+        <h2 class="bottom-cta-title">Not sure which plan is right for you?</h2>
+        <p class="bottom-cta-sub">Just get in touch and we will talk through it together. There is no pressure and no obligation. We want to find the right fit for your business.</p>
+        <div class="bottom-cta-btns">
+          <a href="contact.html" class="btn btn-primary">Start a conversation →</a>
+          <a href="index.html" class="btn btn-ghost">Back to home</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <a href="index.html" class="footer-logo">Nitid<span>us</span></a>
+                <nav class="footer-links" aria-label="Footer navigation">
+          <a href="index.html">Home</a>
+          <a href="pricing.html">Pricing</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+      <p class="footer-copy">© 2025 Nitidus · Web design for Swiss SMEs · Switzerland</p>
+    </div>
+  </footer>
+
+  <script>
+    // Sticky header shadow
+    const header = document.getElementById('site-header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 20);
+    });
+
+    // Mobile nav toggle
+    const toggle = document.querySelector('.nav-toggle');
+    const menu   = document.getElementById('nav-menu');
+    toggle?.addEventListener('click', () => {
+      const open = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', !open);
+      menu.classList.toggle('open');
+      toggle.textContent = open ? '☰' : '✕';
+    });
+    menu?.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        toggle.setAttribute('aria-expanded', 'false');
+        menu.classList.remove('open');
+        toggle.textContent = '☰';
+      });
+    });
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        // Close all
+        document.querySelectorAll('.faq-item').forEach(i => {
+          i.classList.remove('open');
+          i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+        });
+        // Open clicked (unless it was already open)
+        if (!isOpen) {
+          item.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
