@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact – Nitidus Web Design Switzerland</title>
-  <meta name="description" content="Get in touch with Nitidus. Tell us about your business and we will get back to you within one business day.">
+  <title>Contact – Nitidus Web Design Suisse</title>
+  <meta name="description" content="Contactez Nitidus. Parlez-nous de votre activité et nous vous répondrons dans un délai d'un jour ouvrable.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -95,7 +95,7 @@
     /* CONTACT INFO PANEL */
     .contact-info-panel { background: var(--forest); border-radius: var(--radius-xl); padding: 2.5rem; color: var(--white); }
     .contact-info-title { font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; color: var(--white); margin-bottom: 0.75rem; }
-    .contact-info-desc { font-family: var(--font-body); font-size: 0.92rem; color: rgba(255,255,255,0.65); line-height: 1.75; margin-bottom: 2rem; text-align: justify; hyphens: auto; }
+    .contact-info-desc { font-family: var(--font-body); font-size: 0.92rem; color: rgba(255,255,255,0.65); line-height: 1.75; margin-bottom: 2rem; text-align: justify; hyphens: none; }
 
     .contact-details { display: flex; flex-direction: column; gap: 1.25rem; margin-bottom: 2rem; }
     .contact-detail { display: flex; align-items: center; gap: 0.85rem; }
@@ -125,21 +125,21 @@
 
   <header class="site-header" id="site-header">
     <nav class="container nav-inner" aria-label="Main navigation">
-      <a href="index.html" class="logo">Nitid<span>us</span></a>
+      <a href="index-fr.html" class="logo">Nitid<span>us</span></a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle menu">☰</button>
             <ul class="nav-list" id="nav-menu" role="list">
-        <li><a href="index.html" class="nav-link">Home</a></li>
-        <li><a href="pricing.html" class="nav-link">Pricing</a></li>
-        <li><a href="about.html" class="nav-link">About</a></li>
-        <li><a href="contact.html" class="nav-link active">Contact</a></li>
+        <li><a href="index-fr.html" class="nav-link">Accueil</a></li>
+        <li><a href="pricing-fr.html" class="nav-link">Tarifs</a></li>
+        <li><a href="about-fr.html" class="nav-link">À propos</a></li>
+        <li><a href="contact-fr.html" class="nav-link active">Contact</a></li>
       </ul>
       <div class="lang-switcher" aria-label="Language">
-        <a href="contact.html" class="lang-link active">EN</a>
+        <a href="contact.html" class="lang-link">EN</a>
         <a href="contact-de.html" class="lang-link">DE</a>
-        <a href="contact-fr.html" class="lang-link">FR</a>
+        <a href="contact-fr.html" class="lang-link active">FR</a>
         <a href="contact-it.html" class="lang-link">IT</a>
       </div>
-      <a href="contact.html" class="btn btn-primary nav-cta" style="padding:0.6rem 1.35rem;font-size:0.88rem;">Let's talk →</a>
+      <a href="contact-fr.html" class="btn btn-primary nav-cta" style="padding:0.6rem 1.35rem;font-size:0.88rem;">Parlons-en →</a>
     </nav>
   </header>
 
@@ -148,8 +148,8 @@
     <section class="page-hero">
       <div class="page-hero-inner">
         <p class="page-hero-label">Contact</p>
-        <h1 class="page-hero-title">Let's start a <em>conversation</em></h1>
-        <p class="page-hero-sub">Tell us a little about your business and what you are looking for. We will get back to you within one business day.</p>
+        <h1 class="page-hero-title">Commençons une <em>conversation</em></h1>
+        <p class="page-hero-sub">Dites-nous ce que fait votre entreprise et ce que vous recherchez. Nous vous répondrons dans un délai d'un jour ouvrable.</p>
       </div>
     </section>
 
@@ -157,72 +157,72 @@
       <div class="container contact-inner">
 
         <div class="reveal">
-          <h2 class="section-title" id="contact-form-title" style="margin-bottom:1.75rem;">Send us a message</h2>
+          <h2 class="section-title" id="contact-form-title" style="margin-bottom:1.75rem;">Envoyer un message</h2>
           <!-- Netlify Forms: add name="contact" and data-netlify="true" to the form tag when deploying -->
           <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
             <div class="form-row">
               <div class="form-group">
-                <label class="form-label" for="name">Your name *</label>
+                <label class="form-label" for="name">Votre nom *</label>
                 <input class="form-input" type="text" id="name" name="name" required autocomplete="name" placeholder="Marie Schmid">
               </div>
               <div class="form-group">
-                <label class="form-label" for="email">Email address *</label>
+                <label class="form-label" for="email">Adresse e-mail *</label>
                 <input class="form-input" type="email" id="email" name="email" required autocomplete="email" placeholder="marie@example.ch">
               </div>
             </div>
             <div class="form-group">
-              <label class="form-label" for="business">Your business</label>
-              <input class="form-input" type="text" id="business" name="business" placeholder="e.g. Bäckerei Schmid, Zürich">
+              <label class="form-label" for="business">Votre entreprise</label>
+              <input class="form-input" type="text" id="business" name="business" placeholder="p. ex. Boulangerie Schmid, Genève">
             </div>
             <div class="form-group">
-              <label class="form-label" for="service">What are you looking for?</label>
+              <label class="form-label" for="service">Que recherchez-vous ?</label>
               <select class="form-input" id="service" name="service">
-                <option value="">Select an option…</option>
-                <option>New website</option>
-                <option>Website redesign</option>
-                <option>Mobile optimisation</option>
-                <option>Something else</option>
+                <option value="">Sélectionnez une option…</option>
+                <option>Nouveau site web</option>
+                <option>Refonte de site web</option>
+                <option>Optimisation mobile</option>
+                <option>Autre chose</option>
               </select>
             </div>
             <div class="form-group">
-              <label class="form-label" for="message">Tell us about your business *</label>
-              <textarea class="form-input" id="message" name="message" rows="6" required placeholder="What does your business do? What do you want your website to achieve? Any details that might help us…"></textarea>
+              <label class="form-label" for="message">Parlez-nous de votre entreprise *</label>
+              <textarea class="form-input" id="message" name="message" rows="6" required placeholder="Quelle est votre activité ? Qu'attendez-vous de votre site web ? Tout détail qui pourrait nous aider…"></textarea>
             </div>
-            <button class="btn btn-primary" type="submit" style="align-self:flex-start;">Send message →</button>
+            <button class="btn btn-primary" type="submit" style="align-self:flex-start;">Envoyer un message →</button>
           </form>
         </div>
 
         <div class="reveal reveal-delay-1">
           <div class="contact-info-panel">
-            <h3 class="contact-info-title">We would love to hear from you</h3>
-            <p class="contact-info-desc">Whether you have a clear brief or just a rough idea, please reach out. There is no commitment and no pressure, just an honest conversation about whether we are a good fit for each other.</p>
+            <h3 class="contact-info-title">Nous serions ravis de vous entendre</h3>
+            <p class="contact-info-desc">Que vous ayez un brief précis ou simplement une vague idée, n'hésitez pas à nous contacter. Sans engagement et sans pression, juste une conversation honnête pour voir si nous sommes faits pour travailler ensemble.</p>
 
             <div class="contact-details">
               <div class="contact-detail">
                 <div class="contact-detail-icon">📧</div>
                 <div class="contact-detail-text">
                   <strong>info@nitidus.ch</strong>
-                  Email us anytime
+                  Écrivez-nous à tout moment
                 </div>
               </div>
               <div class="contact-detail">
                 <div class="contact-detail-icon">🇨🇭</div>
                 <div class="contact-detail-text">
-                  <strong>Based in Switzerland</strong>
-                  Serving SMEs across the country
+                  <strong>Basé en Suisse</strong>
+                  Au service des PME dans tout le pays
                 </div>
               </div>
               <div class="contact-detail">
                 <div class="contact-detail-icon">🕐</div>
                 <div class="contact-detail-text">
-                  <strong>Response within 24 hours</strong>
-                  Monday to Friday, 9:00 to 18:00
+                  <strong>Réponse sous 24 heures</strong>
+                  Du lundi au vendredi, 9h00 à 18h00
                 </div>
               </div>
             </div>
 
             <div class="contact-reassurance">
-              <p>We read every message ourselves. You will always hear back from a real person who knows your project, not a support team working from a script.</p>
+              <p>Nous lisons chaque message nous-mêmes. Vous recevrez toujours une réponse d'une vraie personne qui connaît votre projet, et non d'une équipe de support qui suit un script.</p>
             </div>
           </div>
         </div>
@@ -235,15 +235,15 @@
   <footer class="site-footer">
     <div class="container">
       <div class="footer-inner">
-        <a href="index.html" class="footer-logo">Nitid<span>us</span></a>
+        <a href="index-fr.html" class="footer-logo">Nitid<span>us</span></a>
                 <nav class="footer-links" aria-label="Footer navigation">
-          <a href="index.html">Home</a>
-          <a href="pricing.html">Pricing</a>
-          <a href="about.html">About</a>
-          <a href="contact.html">Contact</a>
+          <a href="index-fr.html">Accueil</a>
+          <a href="pricing-fr.html">Tarifs</a>
+          <a href="about-fr.html">À propos</a>
+          <a href="contact-fr.html">Contact</a>
         </nav>
       </div>
-      <p class="footer-copy">© 2026 Nitidus · Web design for Swiss SMEs · Switzerland</p>
+      <p class="footer-copy">© 2026 Nitidus · Web design pour les PME suisses · Suisse</p>
     </div>
   </footer>
 
