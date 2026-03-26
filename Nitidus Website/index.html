@@ -91,7 +91,7 @@
     .trust-bar { background: var(--sand-mid); border-bottom: 1px solid var(--border); padding-block: 1.1rem; }
     .trust-bar-inner { display: flex; align-items: center; justify-content: center; gap: clamp(1.5rem, 5vw, 3.5rem); flex-wrap: wrap; }
     .trust-item { font-family: var(--font-body); font-size: 0.85rem; font-weight: 500; color: var(--text-muted); display: flex; align-items: center; gap: 0.45rem; }
-    .trust-item span:first-child { font-size: 1.1rem; }
+    .trust-item span:first-child { font-size: 1.1rem; display: flex; align-items: center; }
 
     /* PAGE CARDS */
     .page-cards-section { background: var(--sand); padding-block: clamp(4rem, 10vw, 6.5rem); }
@@ -106,7 +106,7 @@
     .page-card:hover::after { transform: scaleX(1); }
     .page-card-icon { font-size: 2.25rem; }
     .page-card-title { font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: var(--text); }
-    .page-card-desc { font-family: var(--font-body); font-size: 0.9rem; color: var(--text-muted); line-height: 1.7; flex: 1; }
+    .page-card-desc { font-family: var(--font-body); font-size: 0.9rem; color: var(--text-muted); line-height: 1.7; flex: 1; text-align: justify; hyphens: auto; }
     .page-card-link { font-family: var(--font-body); font-size: 0.88rem; font-weight: 600; color: var(--terracotta); margin-top: 0.5rem; }
 
     /* CTA STRIP */
@@ -170,10 +170,10 @@
 
     <div class="trust-bar" aria-label="Trust signals">
       <div class="container trust-bar-inner">
-        <div class="trust-item"><span>🇨🇭</span><span>Based in Switzerland</span></div>
+        <div class="trust-item"><img src="assets/ch-flag.svg" alt="Swiss flag" width="18" height="18" style="display:block"><span>Based in Switzerland</span></div>
         <div class="trust-item"><span>🤝</span><span>Personal, one-on-one service</span></div>
         <div class="trust-item"><span>⚡</span><span>Fast delivery</span></div>
-        <div class="trust-item"><span>📱</span><span>Mobile-first design</span></div>
+        <div class="trust-item"><span>📱</span><span>Mobile design</span></div>
         <div class="trust-item"><span>🔒</span><span>GDPR compliant</span></div>
       </div>
     </div>
@@ -194,7 +194,7 @@
           <a href="about.html" class="page-card reveal reveal-delay-2">
             <span class="page-card-icon">👋</span>
             <h3 class="page-card-title">About us</h3>
-            <p class="page-card-desc">We are a small Swiss studio built specifically to help local businesses show up online with confidence.</p>
+            <p class="page-card-desc">We are a small, independent team built to help local businesses show up online with confidence.</p>
             <span class="page-card-link">Learn about us →</span>
           </a>
           <a href="contact.html" class="page-card reveal reveal-delay-3">
@@ -232,7 +232,7 @@
           <a href="contact.html">Contact</a>
         </nav>
       </div>
-      <p class="footer-copy">© 2025 Nitidus · Web design for Swiss SMEs · Switzerland</p>
+      <p class="footer-copy">© 2026 Nitidus · Web design for Swiss SMEs · Switzerland</p>
     </div>
   </footer>
 

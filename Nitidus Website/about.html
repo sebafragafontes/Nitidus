@@ -76,7 +76,7 @@
     .story-inner { display: grid; grid-template-columns: 1fr; gap: 3.5rem; align-items: center; }
     @media (min-width: 860px) { .story-inner { grid-template-columns: 1fr 1fr; } }
 
-    .story-body p { font-family: var(--font-body); font-size: 1rem; color: var(--text-muted); line-height: 1.85; margin-bottom: 1.25rem; }
+    .story-body p { font-family: var(--font-body); font-size: 1rem; color: var(--text-muted); line-height: 1.85; margin-bottom: 1.25rem; text-align: justify; hyphens: auto; }
     .story-body p:last-child { margin-bottom: 0; }
     .story-body strong { color: var(--text); font-weight: 600; }
 
@@ -84,9 +84,9 @@
     .story-card-title { font-family: var(--font-display); font-size: 1.2rem; font-weight: 700; margin-bottom: 1.75rem; }
     .story-value { display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 1.5rem; }
     .story-value:last-child { margin-bottom: 0; }
-    .story-value-icon { font-size: 1.5rem; flex-shrink: 0; margin-top: 0.1rem; }
+    .story-value-icon { font-size: 1.5rem; flex-shrink: 0; width: 1.75rem; display: flex; align-items: center; justify-content: center; }
     .story-value-title { font-family: var(--font-body); font-size: 0.95rem; font-weight: 600; color: var(--white); margin-bottom: 0.2rem; }
-    .story-value-desc { font-family: var(--font-body); font-size: 0.85rem; color: rgba(255,255,255,0.6); line-height: 1.65; }
+    .story-value-desc { font-family: var(--font-body); font-size: 0.85rem; color: rgba(255,255,255,0.6); line-height: 1.65; text-align: justify; hyphens: auto; }
 
     /* VALUES */
     .values-section { background: var(--sand); }
@@ -97,7 +97,7 @@
     .value-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
     .value-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
     .value-title { font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; color: var(--text); margin-bottom: 0.6rem; }
-    .value-desc { font-family: var(--font-body); font-size: 0.9rem; color: var(--text-muted); line-height: 1.7; }
+    .value-desc { font-family: var(--font-body); font-size: 0.9rem; color: var(--text-muted); line-height: 1.7; text-align: justify; hyphens: none; }
 
     /* CTA STRIP */
     .cta-strip { background: var(--forest); padding-block: clamp(3.5rem, 8vw, 5.5rem); text-align: center; }
@@ -147,7 +147,7 @@
       <div class="page-hero-inner">
         <p class="page-hero-label">About us</p>
         <h1 class="page-hero-title">We are <em>Nitidus</em></h1>
-        <p class="page-hero-sub">A small web design studio based in Switzerland, built specifically to help local businesses show up online with confidence.</p>
+        <p class="page-hero-sub">A small, independent team based in Switzerland, built to help local businesses show up online with confidence.</p>
       </div>
     </section>
 
@@ -157,9 +157,9 @@
         <div class="story-body reveal">
           <p class="section-label">Our story</p>
           <h2 class="section-title" id="story-title">Why we started Nitidus</h2>
-          <p>We kept seeing the same thing happening to Swiss small businesses. A bakery, a plumber, a family-run shop — doing great work, with loyal customers, but invisible online. Either they had no website at all, or one that was so outdated it made the wrong impression.</p>
+          <p>We kept seeing the same thing happening to Swiss small businesses. A bakery, a plumber, a family-run shop, doing great work, with loyal customers, but invisible online. Either they had no website at all, or one that was so outdated it made the wrong impression.</p>
           <p>The problem was never a lack of motivation. It was that the options felt too complicated or too expensive. Big agencies were overkill. DIY website builders were frustrating. And nobody seemed to offer something <strong>simple, personal and priced fairly</strong> for a business that just wants to be found.</p>
-          <p>That is exactly the gap Nitidus was built to fill. We work with one type of client — Swiss SMEs — and we focus entirely on giving them a professional online presence without the headache that usually comes with it.</p>
+          <p>That is exactly the gap Nitidus was built to fill. We focus on one type of client, Swiss SMEs, and give them a professional online presence without the usual headache.</p>
           <!-- TODO: Add a personal note about yourself here -->
         </div>
 
@@ -181,7 +181,7 @@
               </div>
             </div>
             <div class="story-value">
-              <span class="story-value-icon">🇨🇭</span>
+              <span class="story-value-icon"><img src="assets/ch-flag.svg" alt="Swiss flag" width="24" height="24" style="display:block"></span>
               <div>
                 <p class="story-value-title">Swiss quality</p>
                 <p class="story-value-desc">We take pride in getting the details right. Every site we deliver is something we would be proud to put our name on.</p>
@@ -209,7 +209,7 @@
           <div class="value-card reveal reveal-delay-2">
             <span class="value-icon">🔓</span>
             <h3 class="value-title">You own everything</h3>
-            <p class="value-desc">Your domain, your code, your content. When we are done, it is all yours. No subscriptions that hold your site hostage, no lock-in of any kind.</p>
+            <p class="value-desc">Your domain, your code, your content, it is all yours from day one. Our monthly plan covers hosting, domain management and keeping everything running.</p>
           </div>
           <div class="value-card reveal reveal-delay-3">
             <span class="value-icon">⏱️</span>
@@ -251,7 +251,7 @@
           <a href="contact.html">Contact</a>
         </nav>
       </div>
-      <p class="footer-copy">© 2025 Nitidus · Web design for Swiss SMEs · Switzerland</p>
+      <p class="footer-copy">© 2026 Nitidus · Web design for Swiss SMEs · Switzerland</p>
     </div>
   </footer>
 

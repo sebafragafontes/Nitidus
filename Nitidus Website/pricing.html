@@ -295,7 +295,7 @@
       .model-inner { grid-template-columns: 1fr 1fr; }
     }
 
-    .model-text .section-sub { max-width: 100%; }
+    .model-text .section-sub { max-width: 100%; text-align: justify; hyphens: none; }
 
     .model-steps {
       display: flex;
@@ -338,6 +338,8 @@
       font-size: 0.88rem;
       color: var(--text-muted);
       line-height: 1.65;
+      text-align: justify;
+      hyphens: none;
     }
 
     /* Visual */
@@ -440,7 +442,6 @@
     }
 
     .price-card-featured {
-      border-color: var(--forest);
       box-shadow: var(--shadow-lg);
     }
 
@@ -475,6 +476,8 @@
       color: var(--text-muted);
       line-height: 1.7;
       margin-bottom: 2rem;
+      text-align: justify;
+      hyphens: none;
     }
 
     .price-amount-block {
@@ -512,6 +515,8 @@
       color: var(--text-muted);
       font-style: italic;
       margin-top: 0.3rem;
+      text-align: justify;
+      hyphens: none;
     }
 
     .price-features {
@@ -606,7 +611,7 @@
     /* =============================
        FAQ
     ============================= */
-    .faq-section { background: var(--sand); }
+    .faq-section { background: var(--white); }
 
     .faq-header {
       text-align: center;
@@ -838,8 +843,8 @@
             <div class="model-step">
               <div class="model-step-num">2</div>
               <div>
-                <p class="model-step-title">Then optionally, a monthly care plan</p>
-                <p class="model-step-desc">For a small fixed amount each month, we take care of everything your website needs to keep running properly. Changes, updates, little fixes — you just send us a message and it gets done. Think of it as having a web person on call, without the full-time cost.</p>
+                <p class="model-step-title">A monthly care plan</p>
+                <p class="model-step-desc">For a small fixed amount each month, we take care of everything your website needs to keep running properly.</p>
               </div>
             </div>
             <div class="model-step">
@@ -859,7 +864,7 @@
               <div class="flow-item">
                 <div class="flow-dot orange">☕</div>
                 <div>
-                  <p class="flow-label">Discovery call</p>
+                  <p class="flow-label">First contact</p>
                   <p class="flow-sub">We learn about your business</p>
                 </div>
               </div>
@@ -880,8 +885,8 @@
               <div class="flow-item">
                 <div class="flow-dot">🔧</div>
                 <div>
-                  <p class="flow-label">Monthly care (optional)</p>
-                  <p class="flow-sub">Updates, security and support</p>
+                  <p class="flow-label">Monthly care</p>
+                  <p class="flow-sub">Keeping your website running smoothly</p>
                 </div>
               </div>
               <div class="flow-item">
@@ -929,18 +934,15 @@
               <li class="price-feature"><span class="pf-check">✓</span> Fully mobile responsive</li>
               <li class="price-feature"><span class="pf-check">✓</span> SEO foundations included</li>
               <li class="price-feature"><span class="pf-check">✓</span> Contact form setup</li>
-              <li class="price-feature"><span class="pf-check">✓</span> Up to 5 pages</li>
               <li class="price-feature"><span class="pf-check">✓</span> Launch and domain connection</li>
               <li class="price-feature"><span class="pf-check">✓</span> You own 100% of the code</li>
-              <li class="price-feature"><span class="pf-check">✓</span> 2 rounds of revisions</li>
             </ul>
 
-            <a href="index.html#contact" class="btn btn-outline-forest" style="text-align:center; justify-content:center;">Start a project →</a>
+            <a href="index.html#contact" class="btn btn-primary" style="text-align:center; justify-content:center;">Start a project →</a>
           </div>
 
           <!-- CARD 2: Monthly Care -->
           <div class="price-card price-card-featured reveal reveal-delay-2">
-            <div class="price-badge">Peace of mind</div>
             <div class="price-icon">🤲</div>
             <h3 class="price-name">Monthly Care</h3>
             <p class="price-tagline">Your website keeps working, looking good and representing your business properly every single month. You never have to think about it.</p>
@@ -951,19 +953,17 @@
                 <sup>CHF</sup> ___
               </div>
               <p class="price-freq">per month, cancel anytime</p>
-              <p class="price-note">Requires the Website Creation plan first. Billed monthly with no annual commitment required.</p>
+              <p class="price-note">Requires the Website Creation plan first. Billed monthly with a minimum commitment of 6 months.</p>
             </div>
 
             <ul class="price-features">
               <li class="price-feature"><span class="pf-check">✓</span> We handle everything your site needs</li>
-              <li class="price-feature"><span class="pf-check">✓</span> Changes and updates whenever you need them</li>
               <li class="price-feature"><span class="pf-check">✓</span> Always someone to reach out to</li>
               <li class="price-feature"><span class="pf-check">✓</span> No technical knowledge needed on your side</li>
               <li class="price-feature"><span class="pf-check">✓</span> Peace of mind, month after month</li>
               <li class="price-feature"><span class="pf-check">✓</span> Cancel any time, no questions asked</li>
             </ul>
 
-            <a href="index.html#contact" class="btn btn-primary" style="text-align:center; justify-content:center;">Get started →</a>
           </div>
 
         </div>
@@ -971,84 +971,6 @@
     </section>
 
     <!-- ===== COMPARISON TABLE ===== -->
-    <section class="section included-section" aria-labelledby="included-title">
-      <div class="container">
-        <div class="included-header reveal">
-          <p class="section-label">What you get</p>
-          <h2 class="section-title" id="included-title">Everything at a glance</h2>
-          <p class="section-sub">A clear breakdown of what is included in each plan, so you can make the right decision for your business.</p>
-        </div>
-
-        <div class="included-table-wrap reveal">
-          <table class="included-table" aria-label="Feature comparison">
-            <thead>
-              <tr>
-                <th>Feature</th>
-                <th>Website Creation</th>
-                <th>Monthly Care</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="feature-name">Custom website design</td>
-                <td><span class="check-yes">✓</span></td>
-                <td><span class="check-no">—</span></td>
-              </tr>
-              <tr>
-                <td class="feature-name">Mobile responsive layout</td>
-                <td><span class="check-yes">✓</span></td>
-                <td><span class="check-no">—</span></td>
-              </tr>
-              <tr>
-                <td class="feature-name">SEO foundations</td>
-                <td><span class="check-yes">✓</span></td>
-                <td><span class="check-no">—</span></td>
-              </tr>
-              <tr>
-                <td class="feature-name">Contact form</td>
-                <td><span class="check-yes">✓</span></td>
-                <td><span class="check-no">—</span></td>
-              </tr>
-              <tr>
-                <td class="feature-name">Launch and domain setup</td>
-                <td><span class="check-yes">✓</span></td>
-                <td><span class="check-no">—</span></td>
-              </tr>
-              <tr>
-                <td class="feature-name">You own the code</td>
-                <td><span class="check-yes">✓</span></td>
-                <td><span class="check-yes">✓</span></td>
-              </tr>
-              <tr>
-                <td class="feature-name">Monthly content updates</td>
-                <td><span class="check-no">—</span></td>
-                <td><span class="check-yes">✓</span></td>
-              </tr>
-              <tr>
-                <td class="feature-name">Everything handled for you</td>
-                <td><span class="check-no">—</span></td>
-                <td><span class="check-yes">✓</span></td>
-              </tr>
-              <tr>
-                <td class="feature-name">Always someone to reach out to</td>
-                <td><span class="check-no">—</span></td>
-                <td><span class="check-yes">✓</span></td>
-              </tr>
-              <tr>
-                <td class="feature-name">No technical knowledge needed</td>
-                <td><span class="check-no">—</span></td>
-                <td><span class="check-yes">✓</span></td>
-              </tr>
-              <tr>
-                <td class="feature-name">Cancel any time</td>
-                <td><span class="check-no">—</span></td>
-                <td><span class="check-yes">✓</span></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
 
     <!-- ===== FAQ ===== -->
     <section class="section faq-section" aria-labelledby="faq-title">
@@ -1066,7 +988,7 @@
               <span class="faq-icon" aria-hidden="true">+</span>
             </button>
             <div class="faq-answer">
-              Not at all. The Monthly Care plan is completely optional. Once your site is launched, it is yours. If you prefer to manage it yourself, that is totally fine. Many clients start without the monthly plan and add it later when they realise how much time it saves them.
+              The Monthly Care plan is included for a minimum commitment period of 6 months.
             </div>
           </div>
 
@@ -1076,17 +998,7 @@
               <span class="faq-icon" aria-hidden="true">+</span>
             </button>
             <div class="faq-answer">
-              Yes. There is no contract and no minimum commitment. You can cancel any time before your next billing date and you will not be charged again. Your website stays yours regardless.
-            </div>
-          </div>
-
-          <div class="faq-item" role="listitem">
-            <button class="faq-question" aria-expanded="false">
-              What does "we handle everything" actually mean?
-              <span class="faq-icon" aria-hidden="true">+</span>
-            </button>
-            <div class="faq-answer">
-              It means that if something on your website needs to change or stops working, you send us a message and we sort it out. New opening hours, a price change, a new photo, a paragraph rewrite — you do not need to know anything technical. You just tell us what you want and we take care of it.
+              Yes. After the initial 6-month commitment, you can cancel any time before your next billing date and you will not be charged again. Your website stays yours regardless.
             </div>
           </div>
 
@@ -1096,17 +1008,7 @@
               <span class="faq-icon" aria-hidden="true">+</span>
             </button>
             <div class="faq-answer">
-              The standard price covers sites of up to 5 pages. If your business needs something more complex, like a larger site, a shop or special functionality, we will discuss it with you first and give you a clear quote before any work begins. There are never any surprises.
-            </div>
-          </div>
-
-          <div class="faq-item" role="listitem">
-            <button class="faq-question" aria-expanded="false">
-              What if I already have a website and just want the monthly care?
-              <span class="faq-icon" aria-hidden="true">+</span>
-            </button>
-            <div class="faq-answer">
-              We are happy to take a look at your existing site. If it is something we can maintain without a full rebuild, we will tell you honestly and we can discuss whether the monthly plan makes sense for your situation.
+              All prices are upon consultation and depend on the size and complexity of your request. We will always discuss your needs first and give you a clear quote before any work begins. There are never any surprises.
             </div>
           </div>
 
@@ -1128,7 +1030,7 @@
     <section class="bottom-cta" aria-label="Call to action">
       <div class="bottom-cta-inner">
         <p class="bottom-cta-label">Ready to begin?</p>
-        <h2 class="bottom-cta-title">Not sure which plan is right for you?</h2>
+        <h2 class="bottom-cta-title">Not sure what is right for you?</h2>
         <p class="bottom-cta-sub">Just get in touch and we will talk through it together. There is no pressure and no obligation. We want to find the right fit for your business.</p>
         <div class="bottom-cta-btns">
           <a href="contact.html" class="btn btn-primary">Start a conversation →</a>
@@ -1151,7 +1053,7 @@
           <a href="contact.html">Contact</a>
         </nav>
       </div>
-      <p class="footer-copy">© 2025 Nitidus · Web design for Swiss SMEs · Switzerland</p>
+      <p class="footer-copy">© 2026 Nitidus · Web design for Swiss SMEs · Switzerland</p>
     </div>
   </footer>
 
